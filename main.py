@@ -40,6 +40,7 @@ def write_list_to_file_with_timestamp(file_path, data_list):
         # 检查并写入新内容
         with open(file_path, 'a') as file:
             for item in data_list:
+                itme = item.strip()
                 timestamp = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
                 if item not in existing_content:
                     file.write(f"{timestamp}\n{item}\n")
